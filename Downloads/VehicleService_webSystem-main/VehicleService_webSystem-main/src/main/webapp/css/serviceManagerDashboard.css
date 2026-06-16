@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+    background-color: rgb(77, 77, 77);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh; 
+}
+/*side bar styling*/
+.sidebar {
+    background-color:rgb(0, 0, 0);
+    color: #ecf0f1;
+    width: 250px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+.sidebar h2 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+.sidebar-nav a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav a:hover {
+    background-color: #000000;
+}
+
+.user-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*profile photo*/
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+/*main container*/
+.main-container {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+/*table styling*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2bb87;
+}
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+th {
+    background-color: #000000;
+    color: white;
+    font-size:18px;
+}
+.booking-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.booking-header {
+    width: 50%; /* or try 300px for fixed size */
+    max-width: 700px;
+    min-width: 600px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    background-color: #ffe4bc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    color: #000000;
+}

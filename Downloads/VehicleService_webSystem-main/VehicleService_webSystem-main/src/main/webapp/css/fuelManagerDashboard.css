@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../asset/fuelManagerDashboardBackgroundImage.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    transform: scale(1.1);
+    
+}
+body{
+	  
+  	font-size: 32px;
+    
+  	font-family: 'EB Garamond';
+  	color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    margin: 0;
+    
+
+    
+}
+
+@media (max-width: 1200px) {
+    body{
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body{
+      font-size: 24px;
+    }
+  }
+main{
+  width: 80%;
+  
+}
+@media (max-width: 1450px) {
+    main{
+      width: 95%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main{
+      width: 95%;
+    }
+  }
+#inventoryTable{
+  width: 100%;
+  margin-bottom: 50px;
+}
+table {
+  
+	width: 100%;
+	margin: auto;
+	 
+	background-color: #000000;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  	border-collapse: separate;
+  	border-spacing: 0; 
+  	border: none;
+  	border-radius: 10px;
+}
+thead{
+	border-radius: 10px 10px 0 0;
+}
+ th, td {
+ 	
+	padding: 12px 15px;
+	text-align: center;
+  	border: none;
+ }
+
+th {
+  font-size: 80%;
+	background-color: #333;
+	color: #fff;
+
+}
+td{
+  font-size: 70%;
+  font-family: 'Lato';
+}
+
+#updateButton, #deleteButton{
+	font-size: 60%;
+  font-family:'EB Garamond';
+  
+  background-color: #ff7300;
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addNewFuelButton{
+  font-size: 60%;
+  font-family:'EB Garamond';
+  float: right;
+  background-color: #ff7300;
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+#newFuelSave, #cancelButton{
+  font-size: 60%;
+  font-family:'EB Garamond';
+  
+  background-color: #ff7300;
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addNewFuelButton:hover, #newFuelSave:hover, #updateButton:hover,#cancelButton:hover, #deleteButton:hover {
+  background-color: #8d2800;
+
+}
+
+
+#addNewFuelForm{
+  background-color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  width: 40%;
+  display: none;
+}
+
+.addNewFuelForm{
+  font-size: 80%;
+  
+  
+
+}
+.inputContent {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  gap: 30px;
+  width: 100%;
+  
+  
+}
+
+.labels{
+  width: 30%;
+}
+.inputs{
+  width: 70%;
+}
+
+.fuelTypeCont, .stockAmountCont, .unitPriceCont{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+  width: 100%;
+
+}
+.labelCont{
+  width: 30%;
+}
+.inputContainer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  float: right;
+  width: 70%;
+}
+
+
+.inputContent input{
+  border-radius: 7px;
+  
+  height: 15px;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  transition: outline 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Lato';
+  font-size: 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+
+.addNewFuelForm input:focus{
+  outline: none;
+}
+
+/* errors */
+.error {
+  display: none;
+  color: red;
+  font-size: 60%;
+  
+
+}

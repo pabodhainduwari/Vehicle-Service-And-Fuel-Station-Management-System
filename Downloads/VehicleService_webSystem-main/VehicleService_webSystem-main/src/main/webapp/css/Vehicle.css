@@ -1,0 +1,76 @@
+@charset "UTF-8";
+body::before{
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    transform: scale(1.1);
+    
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    /* border: 2px solid #000;   */
+      
+  }
+body {
+	  
+		width: 100%;
+		margin: 0;
+    
+	  }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      font-size: 40px;
+    }
+
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background:white;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"], input[type="number"],    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] , .btn{
+      margin-top: 20px;
+      background-color: #ffee00;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ffae00;
+    }
+
+    .error {
+  display: none;
+  color: red;
+  font-size: 15px;
+}

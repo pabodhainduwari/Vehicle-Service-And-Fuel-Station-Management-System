@@ -1,0 +1,98 @@
+CREATE DATABASE IF NOT EXISTS fuel_station;
+USE fuel_station;
+
+-- Table: userDetails
+CREATE TABLE userDetails (
+    userID INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    userName VARCHAR(255) NOT NULL,
+    name VARCHAR(255),
+    password VARCHAR(255) NOT NULL,
+    userType VARCHAR(50) NOT NULL DEFAULT 'customer',
+    NIC VARCHAR(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: customerDetails
+CREATE TABLE customerDetails (
+    customerID INT AUTO_INCREMENT PRIMARY KEY,
+    userID INT NOT NULL,
+    royaltyType VARCHAR(50) DEFAULT 'regular',
+    FOREIGN KEY (userID) REFERENCES userDetails(userID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: empDetails
+CREATE TABLE empDetails (
+    empID INT AUTO_INCREMENT PRIMARY KEY,
+    empType VARCHAR(255),
+    userID INT NOT NULL,
+    mobileNum INT NOT NULL DEFAULT 0,
+    salary DOUBLE,
+    address VARCHAR(255),
+    FOREIGN KEY (userID) REFERENCES userDetails(userID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: fuelInventory
+CREATE TABLE fuelInventory (
+    fuelID INT AUTO_INCREMENT PRIMARY KEY,
+    fuelName VARCHAR(50) NOT NULL,
+    stockAmount INT NOT NULL,
+    pricePerUnit DECIMAL(10,2) NOT NULL,
+    lastUpdatedDate VARCHAR(50) NOT NULL,
+    fuelNumber INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: mechanicDetails
+CREATE TABLE mechanicDetails (
+    mechanicID INT AUTO_INCREMENT PRIMARY KEY,
+    mechanicName VARCHAR(100) NOT NULL,
+    mechanicContact VARCHAR(30) NOT NULL,
+    specialty VARCHAR(100) NOT NULL,
+    experience VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: services
+CREATE TABLE services (
+    serviceID INT AUTO_INCREMENT PRIMARY KEY,
+    serviceName VARCHAR(100) NOT NULL,
+    serviceType VARCHAR(100) NOT NULL,
+    description VARCHAR(100) NOT NULL,
+    price VARCHAR(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: servicebooking
+CREATE TABLE servicebooking (
+    bookingID INT AUTO_INCREMENT PRIMARY KEY,
+    customerName VARCHAR(100) NOT NULL,
+    customerID INT NOT NULL,
+    contactNo VARCHAR(45) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    vehicleType VARCHAR(100) NOT NULL,
+    vehicleModel VARCHAR(100) NOT NULL,
+    numberPlate VARCHAR(100) NOT NULL UNIQUE,
+    service VARCHAR(100) NOT NULL,
+    pickup_Drop VARCHAR(100),
+    issue VARCHAR(255),
+    lastServiceDate VARCHAR(45),
+    serviceDate VARCHAR(45) NOT NULL,
+    serviceTime VARCHAR(45) NOT NULL,
+    mechanicID INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (customerID) REFERENCES userDetails(userID) 
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table: vehicle
+CREATE TABLE vehicle (
+    VehicleID INT AUTO_INCREMENT PRIMARY KEY,
+    Owner_name VARCHAR(45) NOT NULL,
+    vType VARCHAR(45) NOT NULL,
+    Reg_num VARCHAR(45) NOT NULL UNIQUE,
+    Chassis VARCHAR(45) NOT NULL UNIQUE,
+    engine VARCHAR(45) NOT NULL UNIQUE,
+    fType VARCHAR(45) NOT NULL,
+    year VARCHAR(45) NOT NULL,
+    make VARCHAR(45) NOT NULL,
+    model VARCHAR(45) NOT NULL,
+    userID INT NOT NULL,
+    FOREIGN KEY (userID) REFERENCES userDetails(userID)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

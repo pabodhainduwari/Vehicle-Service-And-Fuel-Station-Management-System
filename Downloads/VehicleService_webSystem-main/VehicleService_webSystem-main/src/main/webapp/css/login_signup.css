@@ -1,0 +1,245 @@
+body::before{
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    transform: scale(1.1);
+    background-image: url("../asset/login_page_background.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    /* border: 2px solid #000;   */
+      
+  }
+  
+body{
+  max-width: 100%;
+  font-size: 32px;
+
+  font-family: 'EB Garamond';
+  color: white;
+}
+  @media (max-width: 1200px) {
+    body{
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body{
+      font-size: 26px;
+    }
+  }
+
+/* header css */
+
+header{
+    height: 100px;
+    margin-bottom: 30px;
+}
+nav{
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+  margin-right: 50px;
+}
+
+nav a{
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 70%;
+  font-family:'EB Garamond' ;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration:none;
+
+}
+
+.header_signup_button, .header_login_button{
+  background-color: rgb(255, 60, 0);
+  border-radius: 3px;
+  padding: 5px 20px;
+}
+.header_signup_button:hover, .header_login_button:hover{
+  box-shadow: 0 0 5px #812500;
+
+}
+
+nav button:hover{
+  cursor: pointer;
+  color: rgb(255, 175, 1);
+}
+/* main content css */
+
+.main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+  .login_box, .signup_box{
+    
+    
+    padding: 1%;
+    background: linear-gradient(to bottom, #d35030, #ee812e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 30%;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 0 5px #812500;
+}
+    
+
+.login_box:hover .signup_box:hover{
+  box-shadow: 0 0 10px #812500;
+}
+
+ .login_form, .signup_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    padding: 5%;
+    
+ }
+.login_header, .signup_header{
+color: white;
+font-weight: bold;
+
+}
+
+.login_form div, .signup_form div{
+  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.login_form label, .signup_form label{
+  
+  margin-bottom: 10px;
+  font-size: 70%;
+}
+.login_form input , .signup_form input{
+  border-radius: 7px;
+  width: 100%;
+  height: 30px;
+  
+  border: none;
+  padding: 5px;
+  transition: outline 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Lato';
+  font-size: 50%;
+}
+.login_form input:hover , .signup_form input:hover{
+  
+  box-shadow: 0 0 5px #812500;
+}
+
+.login_form input:focus , .signup_form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #af3200;
+}
+
+.userName_box, .password_box, .email_box, .confirm_password_box{
+  margin-bottom: 20px;
+}
+#remember_me_forgot_password{
+  font-size: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+#remember_me_box{
+  font-size: 120%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family:'Lato' ;
+  
+}
+#remember_me_checkbox{
+  height: 13px;
+  width: 13px;
+  accent-color: rgb(255, 211, 89); /* Change checkmark box color */
+  margin-top: 10px;
+
+}
+#forgot_password_box{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-family:'Lato' ;
+  
+}
+.forgot_password_box a{
+  color: white;
+  transition:0.5s;
+}
+
+.forgot_password_box a:hover{
+  color: rgb(240, 222, 122);
+}
+.login_button, .signup_button{
+  width: 100%;
+  height: 40px;
+  background-color: #d35030;
+  color: white;
+  font-family: 'Varela Round';
+  border: none;
+  border-radius: 7px;
+  font-size: 60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ;
+}
+
+.login_button:hover , .signup_button:hover{
+  cursor: pointer;
+  background-color: #c74a2a;
+
+}
+
+
+.register_box div{
+  font-size: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#register{
+  color: white;
+  transition:0.5s;
+  font-size: 70%;
+}
+
+#register:hover{
+  color: rgb(240, 222, 122);
+
+}
+
+
+/* errors */
+.error {
+  display: none;
+  color: red;
+  font-size: 50%;
+}
